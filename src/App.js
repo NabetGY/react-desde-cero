@@ -2,6 +2,35 @@ import React from 'react';
 import './styles/styles.scss';
 import Curso from './Curso'
 
+
+const cursos = [
+  {
+    'title': 'react desde cero',
+    'image':'https://images.unsplash.com/photo-1593642634367-d91a135587b5?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80',
+    'price':'59 mil',
+    'profesor':'nabet',
+  },
+  {
+    'title': 'python desde cero',
+    'image':'https://images.unsplash.com/photo-1593642634367-d91a135587b5?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80',
+    'price':'49 mil',
+    'profesor':'nabet',
+  },
+  {
+    'title': 'java desde cero',
+    'image':'https://images.unsplash.com/photo-1593642634367-d91a135587b5?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80',
+    'price':'39 mil',
+    'profesor':'nabet',
+  },
+  {
+    'title': 'c desde cero',
+    'image':'https://images.unsplash.com/photo-1593642634367-d91a135587b5?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80',
+    'price':'89 mil',
+    'profesor':'nabet',
+  },
+  
+
+]
 const App = () => (
   <>
     <div className="main-banner img-container l-section" id="main-banner">
@@ -18,16 +47,10 @@ const App = () => (
     </div>
 
     <div className='ed-grid m-grid-3'>
-      <Curso />
-      <Curso />
-      <Curso />
-      <Curso />
-      <Curso />
-      <Curso />
-      <Curso />
-      <Curso />
-      <Curso />
-      <Curso />
+      {
+        cursos.map( curso => <Curso title={curso.title} image={curso.image} price={curso.price} profesor={curso.profesor}/>)
+      }
+       <Curso />
 
     </div>
 
