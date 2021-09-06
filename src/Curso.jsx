@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 const curso = {
   'title': 'react desde cero',
   'image': "https://images.unsplash.com/photo-1593642634367-d91a135587b5?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
-  'precio': '50 mil'
+  'price': '50 mil'
 }
 
 const Curso = ({title, image, price, profesor}) => (
