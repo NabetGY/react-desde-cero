@@ -1,6 +1,7 @@
 import React from "react"
+import CourseCard from "../Molecules/CourseCard"
 
-const cursos = [
+const courses = [
     {
         'id' : 1,
         'titulo': 'React desde cero',
@@ -35,27 +36,20 @@ const cursos = [
     },
 ]
 
-const Course = ({ match }) => {
+const CourseGrid = () => (
+    <div className="ed-grid m-grid-4">
+        { courses.map(c => (
+            <CourseCard
+                key={c.id}
+                id={c.id}
+                title={c.titulo}
+                image={c.image}
+                price={c.price}
+                professor={c.profesor}
+                
+            />
+        )) }
+    </div>
+)
 
-    const CursoActual = cursos.filter(c => c.id === parseInt(match.params.id))[0]
-
-    return (
-        <div className='ed-grid m-grid-3'>
-        {
-            CursoActual ? (
-                <>
-                    <h1 className='m-cols-3'>Curso: { CursoActual.titulo } </h1>
-                    <img className='m-cols-1' alt='imagens' src={ CursoActual.image } />
-                    <p className='m-cols-2'>Profesor: { CursoActual.profesor } </p>
-                </>
-            )
-            :
-            (
-                <h1>El curso no existe</h1>
-            )
-        }
-        </div>
-    )
-}
-
-export default Course
+export default CourseGrid

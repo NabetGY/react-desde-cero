@@ -8,7 +8,7 @@ const curso = {
   'price': '50 mil'
 }
 
-const Curso = ({id, title, image, price, profesor}) => (
+const Curso = ({id, title, image, price, professor}) => (
     <article className="card" id={title}>
       <div className="img-container s-ratio-16-9 s-radius-tr s-radius-tl">
         <Link to={ `/cursos/${id}` }>
@@ -27,7 +27,7 @@ const Curso = ({id, title, image, price, profesor}) => (
               </div>
             </div>
             <span className="small">
-              {`Profesor: ${profesor}`}
+              {`Profesor: ${professor}`}
             </span>
           </div>
         </div>
