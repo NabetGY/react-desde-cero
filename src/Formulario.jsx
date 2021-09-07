@@ -7,11 +7,15 @@ class Formulario extends Component {
 
         this.state = {
             nombre: '',
-            correo: ''
+            correo: '',
+            fecha: new Date()
         }
 
         this.cambiarNombre = this.cambiarNombre.bind(this)
         this.cambiarEmail = this.cambiarEmail.bind(this)
+        this.cambiarFecha = this.cambiarFecha.bind(this)
+
+
 
     }
 
@@ -27,10 +31,17 @@ class Formulario extends Component {
         })
     }
 
+    cambiarFecha(e) {
+        this.setState({
+            fecha: new Date()
+        })
+    }
+
     render() {
         return (
             <div className='ed-grid' >
-                <h1>Formulario</h1>
+                <h1>Formulario {this.props.name}</h1>
+                <h4>Fecha actual {Math.ceil(this.state.fecha/1000)}</h4>
                 <form action="">
                     <div className="ed-grid m-grid-2">    
                         <div className='form__item'>
@@ -57,6 +68,19 @@ class Formulario extends Component {
             </div>
         )
     }
+
+
+    componentDidMount(){
+        this.intervaloFecha = setInterval(() => {
+            this.cambiarFecha()
+        }, 1000)
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.intervaloFecha)
+    }
+
+
 }
 
 export default Formulario
