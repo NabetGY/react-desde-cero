@@ -9,7 +9,7 @@ const withLoader = (propValue, WrappedComponent) => {
         }
 
         render() {
-            return this.props.[propValue].length === 0
+            return this.props[propValue].length === 0
             ? <h1 className='t3'>Cargando...</h1>
             : <WrappedComponent {...this.props} />
         }
